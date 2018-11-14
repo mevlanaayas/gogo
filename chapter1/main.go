@@ -1,7 +1,10 @@
 
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
 /*
 function without args and return type
@@ -9,6 +12,8 @@ has only one statement
 */
 func main() {
 	fmt.Println("Hello, World")
+	// exit code 0 means Success. it is an unnecessary unless it is answer of q4.
+	os.Exit(0)
 }
 
 /*
@@ -21,4 +26,7 @@ build:
     to create executable.
  */
 
- 
+ /*
+ answers:
+ 4-) import os, and use os.Exit(code) statement. Use godoc os Exit to see details
+ */
