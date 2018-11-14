@@ -57,3 +57,7 @@ func second(){
 	// fmt.Println("Inside second func ", withinScopeVariable)
 }
 
+/*
+Basically, the variable exists within the nearest curly braces ({ }),
+or block, including any nested curly braces (blocks), but not outside of them.
+*/
