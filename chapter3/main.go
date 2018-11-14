@@ -41,6 +41,7 @@ func main(){
 	second()
 
 	exampleProgramFromBook()
+
 }
 
 
@@ -59,6 +60,7 @@ func second(){
 	fmt.Println("Inside second func ", outOfScopeVariable)
 	// we got "undefined: withinScopeVariable" error at next line
 	// fmt.Println("Inside second func ", withinScopeVariable)
+
 }
 
 /*
@@ -82,7 +84,7 @@ Basically, constants are variables whose values can not be changed
 
 
 
-func exampleProgramFromBook()  {
+func exampleProgramFromBook(){
 	// print is a other version of Println. It does not print new line
 	fmt.Print("Enter a number: ")
 	var input float64
@@ -99,6 +101,7 @@ func exampleProgramFromBook()  {
 	// answer for question 6
 	meter := input * 1000 / 3048
 	fmt.Println("Meter result ", meter)
+
 }
 
 /*
