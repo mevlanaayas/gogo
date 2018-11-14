@@ -39,6 +39,8 @@ func main(){
 
 	first()
 	second()
+
+	exampleProgramFromBook()
 }
 
 
@@ -76,4 +78,46 @@ func constanExample(){
 
 /*
 Basically, constants are variables whose values can not be changed
+*/
+
+
+
+func exampleProgramFromBook()  {
+	// print is a other version of Println. It does not print new line
+	fmt.Print("Enter a number: ")
+	var input float64
+	fmt.Scanf("%f", &input)
+
+	output := input * 2
+
+	fmt.Println("Example output ", output)
+
+	// answer for question 5
+	celsius := (input -32) * 5/9
+	fmt.Println("Celsius result ", celsius)
+
+	// answer for question 6
+	meter := input * 1000 / 3048
+	fmt.Println("Meter result ", meter)
+}
+
+/*
+answers:
+1-)
+	var x string = ""
+	var x = ""
+    x := ""
+2-)
+    6
+3-)
+	scope is the living area of variable.
+	its border is curly braces which variable is created in.
+4-)
+	var 	: changeable variables
+	const 	: constant variables
+
+5-)
+	codes are above
+6-)
+	codes are above
 */
