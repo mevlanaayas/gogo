@@ -3,7 +3,7 @@ package main
 
 import "fmt"
 
-func main() {
+func main()  {
 	// integer addition
 	fmt.Println("1 + 1 =", 1 + 1)
 

@@ -3,7 +3,7 @@ package main
 
 import "fmt"
 
-func main(){
+func main()  {
 	var x string = "Hello, World"
 	// this may also work
 	// var x = "Hello, World"
@@ -50,13 +50,13 @@ func main(){
 // !! in this case we write "var" to start!!
 var outOfScopeVariable = "I am out of scope, so you can access me anywhere"
 
-func first(){
+func first()  {
 	withinScopeVariable := "I am a variable of first, stay away from me"
 	fmt.Println("Inside first func ", outOfScopeVariable)
 	fmt.Println("Inside first func ", withinScopeVariable)
 }
 
-func second(){
+func second()  {
 	fmt.Println("Inside second func ", outOfScopeVariable)
 	// we got "undefined: withinScopeVariable" error at next line
 	// fmt.Println("Inside second func ", withinScopeVariable)
@@ -70,7 +70,7 @@ or block, including any nested curly braces (blocks), but not outside of them.
 
 
 
-func constanExample(){
+func constanExample()  {
 	const constant  = "Hello, World"
 	fmt.Println(constant)
 	// we got "cannot assign to constant" error at next line
@@ -84,7 +84,7 @@ Basically, constants are variables whose values can not be changed
 
 
 
-func exampleProgramFromBook(){
+func exampleProgramFromBook()  {
 	// print is a other version of Println. It does not print new line
 	fmt.Print("Enter a number: ")
 	var input float64
