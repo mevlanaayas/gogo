@@ -37,4 +37,23 @@ func main(){
 	myName := "Mevlana"
 	fmt.Println("My name is ", myName)
 
+	first()
+	second()
 }
+
+// about scope
+// !! in this case we write "var" to start!!
+var outOfScopeVariable = "I am out of scope, so you can access me anywhere"
+
+func first(){
+	withinScopeVariable := "I am a variable of first, stay away from me"
+	fmt.Println("Inside first func ", outOfScopeVariable)
+	fmt.Println("Inside first func ", withinScopeVariable)
+}
+
+func second(){
+	fmt.Println("Inside second func ", outOfScopeVariable)
+	// we got "undefined: withinScopeVariable" error at next line
+	// fmt.Println("Inside second func ", withinScopeVariable)
+}
+
