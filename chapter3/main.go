@@ -41,6 +41,8 @@ func main(){
 	second()
 }
 
+
+
 // about scope
 // !! in this case we write "var" to start!!
 var outOfScopeVariable = "I am out of scope, so you can access me anywhere"
@@ -60,4 +62,18 @@ func second(){
 /*
 Basically, the variable exists within the nearest curly braces ({ }),
 or block, including any nested curly braces (blocks), but not outside of them.
+*/
+
+
+
+func constanExample(){
+	const constant  = "Hello, World"
+	fmt.Println(constant)
+	// we got "cannot assign to constant" error at next line
+	// constant = "Some other string"
+
+}
+
+/*
+Basically, constants are variables whose values can not be changed
 */
