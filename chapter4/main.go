@@ -11,7 +11,7 @@ func main()  {
 		i += 1
 	}
 
-	// be careful i has hold its final value
+	// be careful i hold its final value
 	fmt.Println("outside of loop", i)
 
 	// different syntax
@@ -19,7 +19,7 @@ func main()  {
 		fmt.Println(i)
 	}
 
-	// be careful i has hold its final value
+	// be careful i hold its final value
 	fmt.Println("outside of loop", i)
 
 	// if else statements
@@ -44,6 +44,7 @@ func main()  {
 
 	fmt.Print("Enter a number between 0 and 10: ")
 	fmt.Scanf("%d", &i)
+
 	/*
 	if
 	*/
@@ -82,4 +83,42 @@ func main()  {
 	default:
 		fmt.Println("Unknown Number")
 	}
+
+	// calling answer func for second question
+	answerTwo()
+
+	// calling answer func for third question
+	answerThree()
 }
+
+func answerTwo()  {
+	for i := 1; i <= 100; i++ {
+		if i % 3 == 0 {
+			fmt.Println(i)
+		}
+	}
+}
+
+func answerThree()  {
+	for i := 1; i <= 100; i++ {
+		if i % 15 == 0 {
+			fmt.Println("FizzBuzz ", i)
+		} else if i % 3 == 0 {
+			fmt.Println("Fizz ", i)
+		} else if i % 5 == 0 {
+			fmt.Println("Buzz ", i)
+		} else {
+			fmt.Println("Unhandled case ", i)
+		}
+	}
+}
+
+/*
+answers:
+1-)
+	Big
+2-)
+    Codes are above
+3-)
+	Codes are above
+*/
