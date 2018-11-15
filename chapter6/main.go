@@ -57,6 +57,18 @@ func main()  {
 	*/
 	fmt.Println(recursiveEx(6))
 
+	/*
+	starting to talk about defer, panic and recover
+	*/
+	fmt.Println("-Defer, Panic, Recover-")
+
+	/*
+	defer masterPiece()
+	when we run this statement in any function.
+	masterPiece function runs at the end of function
+	*/
+	deferTry()
+
 }
 
 func average(scores []float64) float64  {
@@ -109,5 +121,21 @@ func recursiveEx(number uint) uint {
 		return 1
 	}
 	return number * recursiveEx(number - 1)
+
+}
+
+func first()  {
+	fmt.Println("1st")
+
+}
+
+func second()  {
+	fmt.Println("2nd")
+
+}
+
+func deferTry()  {
+	defer second()
+	first()
 
 }
