@@ -319,6 +319,7 @@ func swap(numberOne *int, numberTwo *int)  {
 	*temp = *numberOne
 	*numberOne = *numberTwo
 	*numberTwo = *temp
+	// I learned this also works "*x, *y = *y, *x"
 
 }
 
