@@ -1,7 +1,9 @@
 
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main()  {
 	scores := []float64{ 90, 80, 70, 60, 50 }
@@ -68,6 +70,15 @@ func main()  {
 	masterPiece function runs at the end of function
 	*/
 	deferTry()
+	deferTryNo1st()
+
+	/*
+	recover and panic
+	panic is to throw errors
+	recover is to recover this errors :)
+
+	*/
+	panicRecoverEx()
 
 }
 
@@ -133,9 +144,29 @@ func second()  {
 	fmt.Println("2nd")
 
 }
-
 func deferTry()  {
 	defer second()
 	first()
+
+}
+
+func deferTryNo1st()  {
+	defer second()
+	/*
+	we said the function next to defer keyword will be called
+	when function ends. so if we return before line "first()"
+	we expect to see "2nd" on screen and no "1st".
+	*/
+	return
+	first()
+
+}
+
+func panicRecoverEx()  {
+	defer func() {
+		message := recover()
+		fmt.Println("Panic message ", message)
+	}()
+	panic("OMG")
 
 }
