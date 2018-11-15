@@ -106,6 +106,9 @@ func main()  {
 		z = *y // finds value that y store. y is address now and that address holds 10
 	*/
 
+	fmt.Println("-new builtin-")
+	newEx()
+
 }
 
 func average(scores []float64) float64  {
@@ -223,3 +226,10 @@ func setPtrZero(number *int)  {
 
 }
 
+func newEx()  {
+	xPtr := new(int)
+	*xPtr = 10
+	fmt.Println("We are expecting to see address ", xPtr)
+	fmt.Println("We are expecting to see value ", *xPtr)
+
+}
