@@ -80,6 +80,32 @@ func main()  {
 	*/
 	panicRecoverEx()
 
+	/*
+		Pointers
+	when we pass an variable to function
+	we send a copy of that object not itself
+	see the next lines and look at the functions itself
+	*/
+	withoutPointerEx()
+	pointerEx()
+
+	/*
+	when we pass pointer to the function we change the value
+	from address of variable not from the copy of it.
+	if we print number inside both setZero and setPtrZero we
+	see the value of number inside setZero and address of number inside
+	setPtrZero
+
+	pointers are represented with "*" (asterisk)
+	and we use & operator to find address of variable
+
+	we use asterisk to reach a value that address hold
+	example:
+		x = 10 // initialize x sets it to 10, put 10 address of x
+		y = &x // put address of x inside y
+		z = *y // finds value that y store. y is address now and that address holds 10
+	*/
+
 }
 
 func average(scores []float64) float64  {
@@ -170,3 +196,30 @@ func panicRecoverEx()  {
 	panic("OMG")
 
 }
+
+func pointerEx()  {
+	variable := 100
+	setPtrZero(&variable)
+	fmt.Println("We are expecting to see 0 now ;) ", variable)
+
+}
+
+func withoutPointerEx()  {
+	variable := 10
+	setZero(variable)
+	fmt.Println("We are excepting to see 10 again ", variable)
+
+}
+
+func setZero(number int)  {
+	fmt.Println("expected to see value ", number)
+	number = 0
+
+}
+
+func setPtrZero(number *int)  {
+	fmt.Println("expected to see adress", number)
+	*number = 0
+
+}
+
