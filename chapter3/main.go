@@ -54,6 +54,7 @@ func first()  {
 	withinScopeVariable := "I am a variable of first, stay away from me"
 	fmt.Println("Inside first func ", outOfScopeVariable)
 	fmt.Println("Inside first func ", withinScopeVariable)
+
 }
 
 func second()  {
