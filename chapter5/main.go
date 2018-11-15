@@ -79,4 +79,70 @@ func main()  {
 	fmt.Println(exBulkArray)
 	fmt.Println(exMultiLineBulkArray)
 
+	fmt.Println("-slice example-")
+	sliceExample()
+
+}
+
+func sliceExample()  {
+	/*
+	Slices have length and index as arrays
+	But the length is changeable
+	*/
+	// declaring slice. we don't put length
+	var x []float64
+	fmt.Println("Slice default ", x)
+
+	// TODO: need explanation
+	exSlice := make([]float64, 5)
+	fmt.Println("Slice with make 5 ", exSlice)
+
+	// TODO: need explanation
+	exSliceWithMaxSize := make([]float64, 5, 10)
+	fmt.Println("Slice with make 5 10 ", exSliceWithMaxSize)
+
+	arr := [5]float64{ 1, 2, 3, 4, 5 }
+	exSliceWitLowAndHigh := arr[0:5]
+	fmt.Println("Slice with low:high assign ", exSliceWitLowAndHigh)
+
+	/*
+	different syntax to use [low:high expression]
+	exSliceWitLowAndHigh := arr[:]
+	exSliceWitLowAndHigh := arr[:5]
+	exSliceWitLowAndHigh := arr[0:]
+	*/
+
+	// we have two built-in for slices: copy and append
+
+	// append example
+	sliceOne := []int{ 1, 2, 3 }
+
+	/*
+	run: godoc builtin append
+		docs show us usage
+		append(destination slice, new elements or another slice)
+	*/
+	sliceTwo := append(sliceOne, 4, 5)
+
+	fmt.Println("Slice with append ", sliceTwo)
+
+	//copy example
+	sliceThree := []int{ 1, 2, 3 }
+	sliceFour := make([]int, 2)
+
+	/*
+	run: godoc builtin copy
+		docs show us usage
+	    copy(destination, source)
+	*/
+	copy(sliceFour, sliceThree)
+
+	// we can print multiple element at once
+	fmt.Println(sliceThree, sliceFour)
+
+	/*
+	we will see there is only two of elements of sliceThree
+	why because sliceFour has only two gap to get item.
+	*/
+
 }
