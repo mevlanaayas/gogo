@@ -8,7 +8,7 @@ import (
 
 /*
 function without args and return type
-has only one statement
+has only two statement
 */
 func main()  {
 	fmt.Println("Hello, World")
