@@ -24,13 +24,19 @@ type Circle struct {
 
 /*
 	Struct methods
-	special functions for structs
+	special functions(but they are methods) for structs
 */
 
 func (c *Circle) area() (area float64)  {
 	fmt.Println("Inside struct func. Circle: ", c)
 	fmt.Println("Inside struct func. *Circle: ", *c)
 	area = math.Pi * c.r * c.r
+	return
+
+}
+
+func (c *Circle) perimeter() (perimeter float64) {
+	perimeter = 0
 	return
 
 }
@@ -46,6 +52,12 @@ func (r *Rectangle) area() (area float64) {
 	length := distance(r.x1, r.y1, r.x1, r.y2)
 	width := distance(r.x1, r.y1, r.x2, r.y1)
 	area = length * width
+	return
+
+}
+
+func (r *Rectangle) perimeter() (perimeter float64) {
+	perimeter = 0
 	return
 
 }
@@ -80,6 +92,17 @@ type Android struct {
 	Model string
 
 }
+
+/*
+	Interfaces
+
+*/
+type Shape interface {
+	area() float64
+	perimeter() float64
+
+}
+
 
 func main()  {
 	/*
@@ -135,6 +158,12 @@ func main()  {
 	// Android and Person has a is-a relationship: Android is a person
 
 
+	circleShapeEx := Circle{ 4, 5, 6 }
+	rectangleShapeEx := Rectangle{ 3, 4, 5, 6 }
+	fmt.Println(totalArea(&circleShapeEx, &rectangleShapeEx))
+
+
+
 }
 
 func circleArea(c Circle) (area float64) {
@@ -147,5 +176,33 @@ func distance(x1, y1, x2, y2 float64) float64 {
 	a := x2 - x1
 	b := y2 - y1
 	return math.Sqrt(a*a + b*b)
+
+}
+
+/*
+	About interfaces
+if we don't have an interfaces and if we want to
+implement a method that calculates total area for
+different shapes.
+
+even if we use variadic functions to handle many params
+we cant use two different type of variadic parameters
+if we could the problem is the same with adding new shape type
+to function. we can use array of shapes like circles and rectangles
+but if we want to use squares we need to extend our function.
+so interfaces comes to handle this.
+
+*/
+
+func totalArea(shapes ...Shape) (area float64) {
+	/*
+	totalArea only know shapes have area method ( via interface )
+	totalArea does not know the fields of shapes
+	*/
+	for _, shape := range shapes {
+		area += shape.area()
+
+	}
+	return
 
 }
