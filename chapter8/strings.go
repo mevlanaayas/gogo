@@ -39,6 +39,4 @@ func main()  {
 	fmt.Println("Binary: ", arr)
 	fmt.Println("String: ", str)
 
-
-
 }
