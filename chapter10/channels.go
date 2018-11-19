@@ -8,7 +8,6 @@ import (
 
 func main()  {
 	fmt.Println("ch")
-
 	// var c chan string = make(chan string)
 	var c = make(chan string)
 
@@ -19,6 +18,40 @@ func main()  {
 	fmt.Print("enter a string: ")
 	var input string
 	fmt.Scanln(&input)
+
+	/*
+	it is also possible to define buffer size of channels
+	and different types to send/receive
+	as:
+	*/
+	var bufferedChannel = make(chan int, 2)
+
+	// we can send two value at a time over bufferedChannel
+	bufferedChannel <- 10
+	bufferedChannel <- 20
+
+	// if we send third value to channel it will throw an error
+	// bufferedChannel <- 30
+
+	/*
+	when we take one input from channel
+	it will be again possible to send a value to channel
+	*/
+	oneFromChannel := <- bufferedChannel
+	fmt.Println(oneFromChannel)
+
+	bufferedChannel <-30
+
+	go func() {
+		for {
+			intFromChannel := <- bufferedChannel
+			fmt.Println(intFromChannel)
+		}
+	}()
+
+	var secondInput string
+	fmt.Print("second input: ")
+	fmt.Scanln(&secondInput)
 
 }
 
